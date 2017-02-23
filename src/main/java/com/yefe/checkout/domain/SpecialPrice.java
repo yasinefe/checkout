@@ -2,6 +2,8 @@ package com.yefe.checkout.domain;
 
 import java.math.BigDecimal;
 
+import static java.math.BigDecimal.valueOf;
+
 public class SpecialPrice {
 
     private int quantity;
@@ -13,7 +15,7 @@ public class SpecialPrice {
     }
 
     public static SpecialPrice createSpecialPrice(int quantity, double price) {
-        return new SpecialPrice(quantity, BigDecimal.valueOf(price));
+        return new SpecialPrice(quantity, valueOf(price));
     }
 
     public BigDecimal calculateTotalAmount(BigDecimal priceForOne, int totalQuantity) {
@@ -21,7 +23,7 @@ public class SpecialPrice {
         int groupCount = (totalQuantity - remainedCount) / quantity;
 
         return price
-                .multiply(BigDecimal.valueOf(groupCount))
-                .add(priceForOne.multiply(BigDecimal.valueOf(remainedCount)));
+                .multiply(valueOf(groupCount))
+                .add(priceForOne.multiply(valueOf(remainedCount)));
     }
 }
