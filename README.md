@@ -5,7 +5,7 @@ This is an implementation of Checkout Kata test
 ## To Run Tests
 
 - Following command can be run in root directory of the project
-./gradlew clean test
+./gradlew clean check
 
 ## Comments
 
