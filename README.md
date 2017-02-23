@@ -1,6 +1,6 @@
 # Checkout Kata
 
-This an implementation of Checkout Kata test
+This is an implementation of Checkout Kata test
 
 ## To run tests:
 - Following command can be run in root directory of the project
