@@ -1,4 +1,4 @@
-package com.yefe.test.checkout.exception;
+package com.yefe.checkout.exception;
 
 public class PriceNotFoundException extends RuntimeException {
 

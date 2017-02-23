@@ -1,14 +1,14 @@
-package com.yefe.test.checkout;
+package com.yefe.checkout;
 
-import com.yefe.test.checkout.domain.Price;
-import com.yefe.test.checkout.domain.SpecialPrice;
+import com.yefe.checkout.domain.SpecialPrice;
+import com.yefe.checkout.domain.Price;
 
 import java.util.Arrays;
 import java.util.List;
 
-import static com.yefe.test.checkout.domain.Price.createPrice;
+import static com.yefe.checkout.domain.Price.createPrice;
 
-public class TestUtils {
+public class ObjectMother {
 
     public static final double DELTA = 0.001;
 

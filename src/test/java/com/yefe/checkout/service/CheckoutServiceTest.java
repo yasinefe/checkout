@@ -1,16 +1,14 @@
-package com.yefe.test.checkout.service;
+package com.yefe.checkout.service;
 
 
-import com.yefe.test.checkout.TestUtils;
-import com.yefe.test.checkout.domain.Price;
-import com.yefe.test.checkout.exception.PriceNotFoundException;
-import com.yefe.test.checkout.service.CheckoutService;
+import com.yefe.checkout.ObjectMother;
+import com.yefe.checkout.domain.Price;
+import com.yefe.checkout.exception.PriceNotFoundException;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.util.Arrays;
 
-import static com.yefe.test.checkout.TestUtils.*;
 import static java.util.Collections.emptyList;
 import static org.junit.Assert.assertEquals;
 
@@ -36,42 +34,42 @@ public class CheckoutServiceTest {
 
     @Test
     public void shouldReturnCorrectTotalAmountWhenOnlyOneSkuIsInCheckout() {
-        addItem(PRICE_A);
+        addItem(ObjectMother.PRICE_A);
 
         getTotalAndAssertWith(50);
     }
 
     @Test
     public void shouldReturnCorrectTotalAmountWhenMultipleDifferentItemAreInCheckout() {
-        addItem(PRICE_A, PRICE_B, PRICE_C);
+        addItem(ObjectMother.PRICE_A, ObjectMother.PRICE_B, ObjectMother.PRICE_C);
 
         getTotalAndAssertWith(100);
     }
 
     @Test
     public void shouldReturnCorrectTotalAmountWhenMultipleSameItemAreInCheckout() {
-        addItem(PRICE_C, PRICE_C, PRICE_C);
+        addItem(ObjectMother.PRICE_C, ObjectMother.PRICE_C, ObjectMother.PRICE_C);
 
         getTotalAndAssertWith(60);
     }
 
     @Test
     public void shouldReturnCorrectTotalAmountWhenItemHasSpecialPriceAndQuantityIs1() {
-        addItem(PRICE_A);
+        addItem(ObjectMother.PRICE_A);
 
         getTotalAndAssertWith(50);
     }
 
     @Test
     public void shouldReturnCorrectTotalAmountWhenItemHasSpecialPriceAndQuantityIs3() {
-        addItem(PRICE_A, PRICE_A, PRICE_A);
+        addItem(ObjectMother.PRICE_A, ObjectMother.PRICE_A, ObjectMother.PRICE_A);
 
         getTotalAndAssertWith(130);
     }
 
     @Test
     public void shouldReturnCorrectTotalAmountWhenItemHasSpecialPriceAndQuantityIs4() {
-        addItem(PRICE_A, PRICE_A, PRICE_A, PRICE_A);
+        addItem(ObjectMother.PRICE_A, ObjectMother.PRICE_A, ObjectMother.PRICE_A, ObjectMother.PRICE_A);
 
         getTotalAndAssertWith(180);
     }
@@ -81,7 +79,7 @@ public class CheckoutServiceTest {
     }
 
     private void getTotalAndAssertWith(double expectedAmount) {
-        double total = checkoutService.totalOfTransaction(createPriceList());
-        assertEquals(expectedAmount, total, TestUtils.DELTA);
+        double total = checkoutService.totalOfTransaction(ObjectMother.createPriceList());
+        assertEquals(expectedAmount, total, ObjectMother.DELTA);
     }
 }

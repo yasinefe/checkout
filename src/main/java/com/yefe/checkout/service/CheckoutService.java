@@ -1,16 +1,15 @@
-package com.yefe.test.checkout.service;
+package com.yefe.checkout.service;
 
-import com.yefe.test.checkout.domain.Item;
-import com.yefe.test.checkout.domain.Price;
-import com.yefe.test.checkout.exception.PriceNotFoundException;
+import com.yefe.checkout.domain.Item;
+import com.yefe.checkout.domain.Price;
+import com.yefe.checkout.exception.PriceNotFoundException;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
-import static com.yefe.test.checkout.domain.Item.createItem;
+import static com.yefe.checkout.domain.Item.createItem;
 import static java.util.stream.Collectors.counting;
 import static java.util.stream.Collectors.groupingBy;
 import static java.util.stream.Collectors.toList;

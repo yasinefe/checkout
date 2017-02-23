@@ -1,4 +1,4 @@
-package com.yefe.test.checkout.domain;
+package com.yefe.checkout.domain;
 
 import java.math.BigDecimal;
 
